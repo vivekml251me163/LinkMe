@@ -2,7 +2,7 @@
 import { connectDB } from "@/lib/mongodb"
 
 import { NextResponse } from "next/server"
-import User from '@/models/page'
+import User from '@/models/User'
 import { getServerSession } from "next-auth"
 
 

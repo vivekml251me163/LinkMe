@@ -1,7 +1,7 @@
 'use client'
 import localFont from 'next/font/local'
-import AutoScrollGallery from "./components/AutoScrollGallery";
-import Navbar from "./components/Navbar";
+import AutoScrollGallery from "@/components/AutoScrollGallery";
+import Navbar from "@/components/Navbar";
 import { signIn, signOut, useSession } from "next-auth/react"
 import Link from "next/link";
 

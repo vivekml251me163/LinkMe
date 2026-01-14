@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 import localFont from 'next/font/local'
-import SessionWrapper from "../components/SessionWrapper";
+import SessionWrapper from "@/components/SessionWrapper";
 
 import { ToastContainer,Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/Navbar";
 
 
 const LinkSansR = localFont({
