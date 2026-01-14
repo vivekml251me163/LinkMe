@@ -76,7 +76,7 @@ const router = useRouter()
             <Link href="#" className="text-[#254f1a] hover:underline ">Forgot password?</Link>
           </div>
 
-          <div className="w-full flex justify-center"><button type="submit" onClick={toast.error('Failed to submit. Try  using signing un by Google')} className="w-1/2 text-center rounded-full bg-[#254f1a] p-4 px-6 text-white  tracking-tight">Log in</button>
+          <div className="w-full flex justify-center"><button type="submit" onClick={() => toast.error('Failed to submit. Try using signing in by Google')} className="w-1/2 text-center rounded-full bg-[#254f1a] p-4 px-6 text-white  tracking-tight">Log in</button>
           </div>
         </form>
 
