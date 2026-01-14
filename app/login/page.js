@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
-import FloatingBox from "@/components/floating";
 
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -11,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
 
 
 const LinkSansR = localFont({

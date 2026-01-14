@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Navbar from '@/components/Navbar'
+import Navbar from '../components/Navbar'
 
 export default function FeedbackPage() {
   const [name, setName] = useState('')
