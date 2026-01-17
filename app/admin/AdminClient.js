@@ -315,7 +315,7 @@ console.log(links)
                         <input
                           value={link.title}
                           onChange={e =>
-                            updateLink(link.id, 'title', e.target.value)
+                            updateLink({link._id || link.id}, 'title', e.target.value)
                           }
                           placeholder="Title"
                           className="w-full font-medium outline-none transition duration-150 cursor-text focus:ring-1 focus:ring-purple-300 focus:rounded hover:bg-gray-50 px-2 py-1 rounded"
