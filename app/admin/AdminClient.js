@@ -108,7 +108,7 @@ export default function AdminClient({ session }) {
       prev.map(l => (l.id === id ? { ...l, [key]: value } : l))
     )
   }
-
+console.log(links)
   /* Delete */
   const deleteLink = id => {
     setLinks(prev => prev.filter(l => l.id !== id))
