@@ -50,7 +50,7 @@ export default function AdminClient({ session }) {
   /* Link cards */
   const [links, setLinks] = useState([
     {
-      id: 1,
+      _id: 1,
       title: '',
       url: '',
       active: true,
@@ -58,7 +58,7 @@ export default function AdminClient({ session }) {
       icon: 'youtube',
     },
     {
-      id: 2,
+      _id: 2,
       title: '',
       url: '',
       active: true,
@@ -105,13 +105,13 @@ export default function AdminClient({ session }) {
   /* Update field */
   const updateLink = (id, key, value) => {
     setLinks(prev =>
-      prev.map(l => (l.id === id ? { ...l, [key]: value } : l))
+      prev.map(l => (l._id === id ? { ...l, [key]: value } : l))
     )
   }
 
   /* Delete */
   const deleteLink = id => {
-    setLinks(prev => prev.filter(l => l.id !== id))
+    setLinks(prev => prev.filter(l => l._id !== id))
   }
 
   /* Add new link */
@@ -315,7 +315,7 @@ export default function AdminClient({ session }) {
                         <input
                           value={link.title}
                           onChange={e =>
-                            updateLink(link.id, 'title', e.target.value)
+                            updateLink(link._id, 'title', e.target.value)
                           }
                           placeholder="Title"
                           className="w-full font-medium outline-none transition duration-150 cursor-text focus:ring-1 focus:ring-purple-300 focus:rounded hover:bg-gray-50 px-2 py-1 rounded"
@@ -323,7 +323,7 @@ export default function AdminClient({ session }) {
                         <input
                           value={link.url}
                           onChange={e =>
-                            updateLink(link.id, 'url', e.target.value)
+                            updateLink(link._id, 'url', e.target.value)
                           }
                           placeholder="URL"
                           className="w-full text-gray-500 outline-none transition duration-150 cursor-text focus:ring-1 focus:ring-purple-300 focus:rounded hover:bg-gray-50 px-2 py-1 rounded"
@@ -335,7 +335,7 @@ export default function AdminClient({ session }) {
 
                         <button
                           onClick={() =>
-                            updateLink(link.id, 'active', !link.active)
+                            updateLink(link._id, 'active', !link.active)
                           }
                           className={`w-10 h-5 rounded-full relative transition duration-200 cursor-pointer hover:opacity-80 ${link.active ? 'bg-green-400' : 'bg-gray-300'}
                             `}
@@ -356,7 +356,7 @@ export default function AdminClient({ session }) {
                   </div>
                 </div>
               ))}
-              <div><button onClick={shareUrl} className='block md:hidden rounded-full border border-slate-400 text-center flex px-6 py-2 mx-auto transition duration-200 hover:bg-gray-100 hover:border-slate-500 active:scale-95 cursor-pointer'> {process.env.NEXT_PUBLIC_HOST}/meowcutes07 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" strokeWidth="1.5" className="!size-5 h-5 w-5 ml-1 text-foreground-primary hover:text-foreground-secondary transition-colors"><path d="M216,112v96a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V112A16,16,0,0,1,56,96H80a8,8,0,0,1,0,16H56v96H200V112H176a8,8,0,0,1,0-16h24A16,16,0,0,1,216,112ZM93.66,69.66,120,43.31V136a8,8,0,0,0,16,0V43.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,69.66Z"></path></svg></button></div>
+              <div><button onClick={shareUrl} className='block md:hidden rounded-full border border-slate-400 text-center flex px-6 py-2 mx-auto transition duration-200 hover:bg-gray-100 hover:border-slate-500 active:scale-95 cursor-pointer'> @{username} <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" strokeWidth="1.5" className="!size-5 h-5 w-5 ml-1 text-foreground-primary hover:text-foreground-secondary transition-colors"><path d="M216,112v96a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V112A16,16,0,0,1,56,96H80a8,8,0,0,1,0,16H56v96H200V112H176a8,8,0,0,1,0-16h24A16,16,0,0,1,216,112ZM93.66,69.66,120,43.31V136a8,8,0,0,0,16,0V43.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,69.66Z"></path></svg></button></div>
 
             </div>
           </div>
@@ -364,12 +364,12 @@ export default function AdminClient({ session }) {
 
         {/* RIGHT – PHONE PREVIEW */}
         <div className="md:block  space-y-8 hidden py-4 mx-auto ">
-          <div><button onClick={shareUrl} className='rounded-full bg-slate-50 border border-slate-400 text-center flex px-6 py-2 transition duration-200 hover:bg-white hover:border-slate-500 active:scale-95 cursor-pointer'> {process.env.NEXT_PUBLIC_HOST}/@{username} <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" strokeWidth="1.5" className="!size-5 h-5 w-5 ml-1 text-foreground-primary hover:text-foreground-secondary transition-colors"><path d="M216,112v96a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V112A16,16,0,0,1,56,96H80a8,8,0,0,1,0,16H56v96H200V112H176a8,8,0,0,1,0-16h24A16,16,0,0,1,216,112ZM93.66,69.66,120,43.31V136a8,8,0,0,0,16,0V43.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,69.66Z"></path></svg></button></div>
+          <div><button onClick={shareUrl} className='rounded-full bg-slate-50 border border-slate-400 text-center flex px-6 py-2 transition duration-200 hover:bg-white hover:border-slate-500 active:scale-95 cursor-pointer'> @{username} <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" strokeWidth="1.5" className="!size-5 h-5 w-5 ml-1 text-foreground-primary hover:text-foreground-secondary transition-colors"><path d="M216,112v96a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V112A16,16,0,0,1,56,96H80a8,8,0,0,1,0,16H56v96H200V112H176a8,8,0,0,1,0-16h24A16,16,0,0,1,216,112ZM93.66,69.66,120,43.31V136a8,8,0,0,0,16,0V43.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,69.66Z"></path></svg></button></div>
           {/* <div className="relative w-60  h-[500px]   bg-gradient-to-b from-blue-200 via-cyan-400 to-blue-500  rounded-3xl border-[1.5px] border-violet-800 overflow-y-auto" > */}
 
 
             <div className="h-[500px] w-60 mx-auto bg-gradient-to-b rounded-2xl ring ring-violet-600 from-purple-300  to-yellow-100 via-yellow-50 flex flex-col  items-center  px-4 py-3">
-            <div className="text-center mt-0 m-4  text-[11px]  shadow-md mx-auto p-0.15 px-2 w-fit text-slate-700 font-sans border border-slate-400 rounded-md  " >https://{process.env.NEXT_PUBLIC_HOST}/@{username}</div>
+            <div className="text-center mt-0 m-4  text-[11px]  shadow-md mx-auto p-0.15 px-2 w-fit text-slate-700 font-sans border border-slate-400 rounded-md  " >@{username}</div>
       <div className="w-full max-w-2xl flex flex-col items-center ">
         <img
           src={avatar}
